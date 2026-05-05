@@ -1729,7 +1729,7 @@ function buildGallery() {
       var featClass = (idx === 0 || idx === 4 || idx === 8 || idx === 12) ? ' featured' : '';
       item.className = 'gallery-masonry-item' + featClass;
       var cap = photo.text ? '<div class="caption">' + photo.text + '</div>' : '';
-      item.innerHTML = '<img src="photos/' + photo.file + '" alt="照片" loading="lazy"><div class="overlay"><span class="emoji">' + photo.caption + '</span>' + cap + '</div>';
+      item.innerHTML = '<img src="' + (PHOTO_DATA[photo.file] || '') + '" alt="照片" loading="lazy"><div class="overlay"><span class="emoji">' + photo.caption + '</span>' + cap + '</div>';
       item.addEventListener('click', function() { openLightbox(PHOTO_DATA[photo.file]); });
       grid.appendChild(item);
     })(PHOTOS[i], i);
